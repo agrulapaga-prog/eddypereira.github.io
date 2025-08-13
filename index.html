@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eddy Pereira | Cantante Regional Mexicano</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      background-color: #111;
+      line-height: 1.7;
+    }
+
+    /* Header con fondo de escenario */
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1600x900/?concert,mariachi,regional-mexican') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 3.8rem;
+      margin-bottom: 15px;
+      letter-spacing: 3px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    header p {
+      font-size: 1.4rem;
+      max-width: 800px;
+      font-weight: 400;
+    }
+
+    /* Navegación */
+    nav {
+      background-color: rgba(0, 0, 0, 0.95);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: white;
+      padding: 18px 28px;
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #e91e63;
+      border-radius: 6px;
+    }
+
+    /* Secciones */
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.7rem;
+      margin-bottom: 60px;
+      color: #e91e63;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 3px;
+      background: #e91e63;
+      bottom: -12px;
+      left: 20%;
+    }
+
+    /* Sobre Mí */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .about img {
+      flex: 1;
+      min-width: 300px;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .about-text {
+      flex: 2;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+
+    /* Música */
+    .music-links {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .music-links a {
+      display: inline-block;
+      margin: 0 20px 25px;
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .music-links a:hover {
+      color: #e91e63;
+    }
+
+    /* Video */
+    .video-container {
+      position: relative;
+      overflow: hidden;
+      padding-top: 56.25%;
+      margin: 50px 0;
+      border-radius: 14px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Shows */
+    .shows {
+      background-color: #1a1a1a;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .shows table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 35px;
+      color: #ddd;
+    }
+
+    .shows th {
+      background-color: #e91e63;
+      padding: 16px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .shows td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #333;
+    }
+
+    .shows tr:hover td {
+      background-color: #2c2c2c;
+    }
+
+    /* Contacto */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-form input, 
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 18px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.05rem;
+      background-color: #222;
+      color: white;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #aaa;
+    }
+
+    .contact-form button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: 0.3s;
+      width: 100%;
+    }
+
+    .contact-form button:hover {
+      background-color: #c2185b;
+      transform: translateY(-2px);
+    }
+
+    /* Redes Sociales */
+    .social-links {
+      text-align: center;
+      margin: 50px 0;
+      font-size: 1.4rem;
+    }
+
+    .social-links a {
+      margin: 0 22px;
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #e91e63;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #000;
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.8rem;
+      }
+      header p {
+        font-size: 1.1rem;
+      }
+      nav ul {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about {
+        flex-direction: column;
+      }
+      .about img {
+        width: 100%;
+      }
+      h2 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="inicio">
+    <h1>EDDY PEREIRA</h1>
+    <p>Cantante • Música Popular y Regional Mexicana</p>
+  </header>
+
+  <!-- Navegación -->
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#sobremi">Sobre Mí</a></li>
+      <li><a href="#musica">Música</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#shows">Shows</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sobre Mí -->
+  <section id="sobremi" class="about">
+    <img src="https://imgur.com/a/oNU4qcP" alt="Foto de Eddy Pereira">
+    <div class="about-text">
+      <h2>Sobre Mí</h2>
+      <p>Soy <strong>Eddy Pereira</strong>, un cantante apasionado por la <strong>música popular y regional mexicana</strong>, un género que late en el corazón de nuestra cultura. Mi música es una mezcla de tradición, sentimiento y ritmo, con letras que cuentan historias reales de amor, desamor y vida en el campo y la ciudad.</p>
+      <p>Desde pequeño crecí entre corridos, sones y rancheras, y hoy dedico mi voz a honrar este legado musical. He compartido escenario con grandes del género y mi música ya suena en México, Estados Unidos y más allá de nuestras fronteras.</p>
+    </div>
+  </section>
+
+  <!-- Música -->
+  <section id="musica">
+    <h2>Mi Música</h2>
+    <p>Escucha mis canciones en las plataformas más populares:</p>
+    <div class="music-links">
+      <a href="https://open.spotify.com/intl-es/artist/0f7pswddh1hQw4LyiMC899" target="_blank">🎧 Spotify</a>
+      <a href="https://music.apple.com/es/artist/eddy-pereira/1697982566" target="_blank">🎵 Apple Music</a>
+      <a href="https://www.youtube.com/@eddypereiracantante" target="_blank">📺 YouTube</a>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section id="videos">
+    <h2>Video Oficial</h2>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/5SqymqFys1g" title="Video oficial de Eddy Pereira" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Shows -->
+  <section class="shows" id="shows">
+    <h2>Próximos Shows</h2>
+    <table>
+      <tr>
+        <th>Fecha</th>
+        <th>Ciudad</th>
+        <th>Lugar</th>
+        <th>Boletos</th>
+      </tr>
+      <tr>
+        <td>15 Jun 2025</td>
+        <td>Guadalajara</td>
+        <td>Teatro Diana</td>
+        <td><a href="#" style="color:#e91e63;">Comprar</a></td>
+      </tr>
+      <tr>
+        <td>22 Jun 2025</td>
+        <td>Los Ángeles</td>
+        <td>The Wiltern</td>
+        <td><a href="#" style="color:#e91e63;">Ver</a></td>
+      </tr>
+      <tr>
+        <td>5 Jul 2025</td>
+        <td>Monterrey</td>
+        <td>Palacio de los Deportes</td>
+        <td><a href="#" style="color:#e91e63;">Comprar</a></td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Quieres contratar a Eddy para un evento, colaboración o entrevista? Escríbeme aquí:</p>
+    <form class="contact-form">
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo" required>
+      <textarea rows="5" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar Mensaje</button>
+    </form>
+  </section>
+
+  <!-- Redes Sociales -->
+  <div class="social-links">
+    <a href="https://instagram.com/eddypereiracantante" target="_blank">Instagram</a>
+    <a href="https://tiktok.com/@eddypereiracantante" target="_blank">TikTok</a>
+    <a href="https://youtube.com/@eddypereiracantante" target="_blank">YouTube</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Eddy Pereira. Todos los derechos reservados.</p>
+    <p>Diseñado con orgullo y sabor mexicano.</p>
+  </footer>
+
+  <!-- Script para el formulario -->
+  <script>
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('¡Gracias por tu mensaje! Eddy se pondrá en contacto contigo muy pronto.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
