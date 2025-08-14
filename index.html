@@ -20,20 +20,20 @@
       line-height: 1.7;
     }
 
-    /* Header con fondo perzonalizado */
-header {
-  height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.imgur.com/iDDdNAI.jpeg') no-repeat center center/cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 0 20px;
-  position: relative;
-  z-index: 1;
-}
+    /* Header con fondo personalizado */
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.imgur.com/iDDdNAI.jpeg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
 
     header h1 {
       font-size: 3.8rem;
@@ -101,6 +101,52 @@ header {
       background: #e91e63;
       bottom: -12px;
       left: 20%;
+    }
+
+    /* Lanzamiento Destacado */
+    .lanzamiento {
+      background: linear-gradient(135deg, #16213e, #0f3460);
+      text-align: center;
+      border-radius: 20px;
+      padding: 50px 20px;
+      margin: 40px 0;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .lanzamiento h2 {
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .lanzamiento h2::after {
+      display: none;
+    }
+
+    .lanzamiento p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      color: #ddd;
+    }
+
+    .lanzamiento .links {
+      margin: 30px 0;
+    }
+
+    .lanzamiento .links a {
+      display: inline-block;
+      margin: 0 15px;
+      background: #e91e63;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .lanzamiento .links a:hover {
+      background: #c2185b;
+      transform: translateY(-3px);
     }
 
     /* Sobre Mí */
@@ -190,7 +236,7 @@ header {
     }
 
     .shows tr:hover td {
-      background-color: #2c2c2c;
+      background-color: #2c2c2d;
     }
 
     /* Contacto */
@@ -296,12 +342,26 @@ header {
     <ul>
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#sobremi">Sobre Mí</a></li>
+      <li><a href="#lanzamiento">Lanzamiento</a></li>
       <li><a href="#musica">Música</a></li>
       <li><a href="#videos">Videos</a></li>
       <li><a href="#shows">Shows</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
+
+  <!-- Lanzamiento Destacado -->
+  <section id="lanzamiento" class="lanzamiento">
+    <h2>🎉 ¡LANZAMIENTO OFICIAL!</h2>
+    <h3 style="color:#fff; margin: 10px 0;">"EL REINADO" (feat. Giovanny Ayala)</h3>
+    <p>🔥 Hoy, 14 de agosto de 2025, nace un nuevo himno de la música regional mexicana.</p>
+    <p>Una colaboración poderosa que honra nuestras raíces y conecta con el corazón del pueblo.</p>
+    <div class="links">
+      <a href="https://open.spotify.com/artist/0f7pswddh1hQw4LyiMC899" target="_blank">🎧 Escuchar en Spotify</a>
+      <a href="https://music.apple.com/es/album/el-reinado-feat-giovanny-ayala-single/1832999677" target="_blank">🎵 Apple Music</a>
+      <a href="https://www.youtube.com/watch?v=RHkbAvlSVTA" target="_blank">📺 YouTube</a>
+    </div>
+  </section>
 
   <!-- Sobre Mí -->
   <section id="sobremi" class="about">
@@ -318,7 +378,7 @@ header {
     <h2>Mi Música</h2>
     <p>Escucha mis canciones en las plataformas más populares:</p>
     <div class="music-links">
-      <a href="https://open.spotify.com/intl-es/artist/0f7pswddh1hQw4LyiMC899" target="_blank">🎧 Spotify</a>
+      <a href="https://open.spotify.com/artist/0f7pswddh1hQw4LyiMC899" target="_blank">🎧 Spotify</a>
       <a href="https://music.apple.com/es/artist/eddy-pereira/1697982566" target="_blank">🎵 Apple Music</a>
       <a href="https://www.youtube.com/@eddypereiracantante" target="_blank">📺 YouTube</a>
     </div>
@@ -328,7 +388,7 @@ header {
   <section id="videos">
     <h2>Video Oficial</h2>
     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/5SqymqFys1g" title="Video oficial de Eddy Pereira" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/RHkbAvlSVTA" title="Video oficial de EL REINADO" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
 
@@ -384,12 +444,10 @@ header {
 
   <!-- Footer -->
   <footer>
-    <footer>
-  <p>© 2025 Eddy Pereira. Todos los derechos reservados.</p>
-  <p>Contacto: <a href="mailto:eddypereiracantante@gmail.com" style="color:#e91e63;">eddypereiracantante@gmail.com</a></p>
-  <p>Diseñado con orgullo y sabor mexicano.</p>
-</footer>
-  
+    <p>© 2025 Eddy Pereira. Todos los derechos reservados.</p>
+    <p>Contacto: <a href="mailto:eddypereiracantante@gmail.com" style="color:#e91e63;">eddypereiracantante@gmail.com</a></p>
+    <p>Diseñado con orgullo y sabor mexicano.</p>
+  </footer>
 
   <!-- Script para el formulario -->
   <script>
